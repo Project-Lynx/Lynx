@@ -1,5 +1,5 @@
 # Lynx
-Open Source finance platform (python web app). This is a plug and play platform for the user to build off and tailor suit it for their own personal means of keeping up with financial markets.
+Open Source finance platform, This is a plug and play platform for the user to build off and tailor suit it for their own personal means of keeping up with financial markets.
 
 
 ## Getting Started
@@ -9,8 +9,8 @@ Open Source finance platform (python web app). This is a plug and play platform 
 We suggest creating a separate virtual environment running Python 3 for this app, and install all of the required dependencies there. Run in Terminal/Command Prompt:
 
 ```
-git clone https://github.com/antonio-hickey/gDash/
-cd gDash
+git clone https://github.com/Project-Lynx/Lynx
+cd Lynx
 python3 -m venv env
 ```
 
@@ -32,23 +32,14 @@ To install all of the required packages to this environment, simply run:
 pip3 install -r requirements.txt
 ```
 
-To start the app:
+To start the api:
 
 ```
-python3 index.py
+python3 api.py
 ```
 
-which will output:
-
+Now start the react app:
 ```
-Lynx is running on http://127.0.0.1:8050/apps/home
-Dash is running on http://127.0.0.1:8050/
-
- * Serving Flask app "dash_app" (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: on
+cd app/frontend/lynx
+npm start
 ```
-
-Go to the link http://127.0.0.1:8050/apps/home

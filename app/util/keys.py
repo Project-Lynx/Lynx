@@ -4,4 +4,4 @@
 """
 
 # Get your free key @ https://newsapi.org/
-NEWS_API_KEY = " *REPLACE WITH YOUR API KEY* "
+NEWS_API_KEY = " * REPLACE WITH YOUR OWN KEY * "
