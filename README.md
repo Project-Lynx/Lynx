@@ -41,5 +41,6 @@ python3 api.py
 Now start the react app:
 ```
 cd app/frontend/lynx
+npm install
 npm start
 ```
