@@ -4,14 +4,6 @@ import './../assets/css/Home.css';
 
 function Home() {
 
-  // Getting time from flask api
-  const [Time, setTime] = useState('not working');
-  useEffect(() => {
-    fetch('http://127.0.0.1:5000/Time').then(res => res.json()).then(data => {
-      setTime(data.Time);
-    });
-  }, []);
-
   // Getting newsfeed from flask api
   const [News, setNews] = useState('not working');
   useEffect(() => {
