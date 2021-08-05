@@ -35,6 +35,7 @@ def get_quotes(symbols):
         # Defining variables
         names = parsed.find_all('h1')
         price = parsed.find('span', {'data-reactid' : '32'}).string
+        price = float(price.replace(",",""))
         change = parsed.find('span', {'data-reactid' : '33'}).string    
         d1 = change.find('(')+1
         d2 = change.find(')')
@@ -48,7 +49,7 @@ def get_quotes(symbols):
                 output[x] = {'name': name[:delim]}
             else:
                 output[x] = {'name': name.string[:delim]}
-        output[x]["last"] = price
+        output[x]["last"] = round(price,2)
         output[x]["pchange"] = change[d1:d2]
         output[x]["url"] = url
 
