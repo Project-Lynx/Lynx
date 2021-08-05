@@ -102,6 +102,18 @@ def get_feed():
                 title_ = title_[:69] + "..."
             titles.append(title_)
             continue
+        if "FOREX-" in title.text:
+            title_ = str(title.text).replace("FOREX-","")
+            if len(title_) >= 69:
+                title_ = title_[:69] + "..."
+            titles.append(title_)
+            continue
+        if "RPT-" in title.text:
+           title_ = str(title.text).replace("RPT-","")
+           if len(title_) >= 69:
+               title_ = title_[:69] + "..."
+           titles.append(title_)
+           continue
         else:
             if len(title.text) >= 69:
                 title = title.text[:69] + "..."
