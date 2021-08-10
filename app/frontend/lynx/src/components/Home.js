@@ -4,6 +4,14 @@ import './../assets/css/Home.css';
 
 function Home() {
 
+  // Getting econ events from flask api
+  const [Events, setEvents] = useState('not working');
+  useEffect(() => {
+    fetch('http://127.0.0.1:5000/EconEvents').then(res => res.json()).then(data => {
+      setEvents(data);
+    })
+  }, []);
+
   // Getting saved notes from flask api
   const [Notes, setNotes] = useState('not working');
   useEffect(() => {
@@ -158,6 +166,36 @@ function Home() {
   var q6Name = Quotes[qKeys[5]]["name"]
   var q6Last = Quotes[qKeys[5]]["last"]
   var q6PChange = Quotes[qKeys[5]]["pchange"]
+
+  function eventsTable() {
+    var keys = Object.keys(Events);
+    return keys.map((key, index) => {
+      return (
+        <tr>
+          <td style={{width: 200 + 'px'}}>
+            {key}
+          </td>
+
+          <td style={{width: 78 + 'px'}}>
+            {Events[key]["Region"]}
+          </td>
+
+          <td style={{width: 200 + 'px'}}>
+            {Events[key]["Time"]}
+          </td>
+
+          <td style={{width: 94 + 'px'}}>
+            {Events[key]["Expectation"]}
+          </td>
+
+          <td style={{borderRight: 'none'}}>
+            {Events[key]["Actual"]}
+          </td>
+
+        </tr>
+      )
+    })
+  }
 
 
   function table_() {
@@ -369,6 +407,22 @@ function Home() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="events-box">
+          <table className="events-columns">
+               <tr>
+                   <td style={{width: 200 + 'px'}}>Event</td>
+                   <td style={{width: 50 + 'px'}}>Region</td>
+                   <td style={{width: 200 + 'px'}}>Time</td>
+                   <td style={{width: 50 + 'px'}}>Expected</td>
+                   <td style={{border: 'none'}}>Actual</td>
+               </tr>
+          </table>
+
+          <table className="events-data" id="event-rows">
+            {eventsTable()}
+          </table>
       </div>
   </div>
   )
