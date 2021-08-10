@@ -114,6 +114,12 @@ def get_feed():
                title_ = title_[:69] + "..."
            titles.append(title_)
            continue
+        if "Olympics-" in title.text:
+            title_ = str(title.text).replace("Olympics-","")
+            if len(title_) >= 69:
+                title_ = title_[:69] + "..."
+            titles.append(title_)
+
         else:
             if len(title.text) >= 69:
                 title = title.text[:69] + "..."
