@@ -232,7 +232,7 @@ select {
   border: 1px solid #D1D1D1;
   border-radius: 4px;
   box-shadow: none;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   font-family: inherit;
   font-size: inherit; /*https://stackoverflow.com/questions/6080413/why-doesnt-input-inherit-the-font-from-body*/}
 /* Removes awkward default styles on some inputs for iOS */
@@ -623,28 +623,28 @@ body{
 
 
 /* Wide screens */
-@media only screen 
-and (min-width : 1224px) {  
+@media only screen
+and (min-width : 1224px) {
   .top-bar{
     width: 100%;
     height: 75px;
-    background-color: #1D262F; 
+    background-color: #1D262F;
   }
-  
+
   .logo-box{
     margin-left: 0.5%;
     width: 6%;
     height: 99%;
     border: 1px solid #87B4E5;
   }
-  
+
   .logo{
     max-width: 80px;
     margin-left: 7%;
     margin-top: 3px;
     position:relative;
   }
-  
+
   .main-box{
     margin-left: 6.5%;
     margin-top: -74px;
@@ -652,12 +652,12 @@ and (min-width : 1224px) {
     border: 1px solid #87B4E5;
     border-left-style: none;
   }
-  
+
   .cmd-box{
     margin-top: 1%;
     margin-left: 2%;
   }
-  
+
   .news-box{
     margin-top: -0.05%;
     margin-left: 0.5%;
@@ -667,12 +667,12 @@ and (min-width : 1224px) {
     border-top-style: none;
     border-bottom-style: none;
   }
-  
+
   .div-news{
     padding: 25px 25px 25px 25px;
     color: #87B4E5;
   }
-  
+
   .table-news{
     border: 1px solid #5C8CBE;
     border-collapse: collapse;
@@ -680,18 +680,18 @@ and (min-width : 1224px) {
     max-height: 500px;
     color: #87B4E5;
   }
-  
+
   .table-news td{
     border: 1px solid #5C8CBE;
     color: #87B4E5;
     width: 500px;
   }
-  
+
   .table-news tr:hover{
     background-color: #8856a7;
     cursor: pointer;
   }
-  
+
   input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select{
     border: 1px solid #87B4E5;
     background-color:#242e3f;
@@ -1076,7 +1076,7 @@ and (min-width : 1224px) {
     font-weight: bold;
     position: relative;
   }
-  
+
   .events-box{
     display: inline-block;
     margin-left:487px;
@@ -1091,7 +1091,7 @@ and (min-width : 1224px) {
   .events-columns{
     height: 25px;
     border-bottom: 1px solid #87B4E5;
-    width: 100%; 
+    width: 100%;
   }
   .events-columns td{
     border-right: 1px solid #87B4E5;
@@ -1099,19 +1099,19 @@ and (min-width : 1224px) {
     text-align: center;
   }
   .events-data{
-    width: 100%; 
+    width: 100%;
   }
-  
+
   .events-data td{
     border-right: 1px solid #87B4E5;
     border-bottom: 1px solid #87B4E5;
     text-align: center;
   }
- 
+
 }
 
 /* Ultra Wide screens */
-@media only screen 
+@media only screen
 and (min-width : 2000px) {
   .top-bar{
     width: 100.5%;
@@ -1119,20 +1119,20 @@ and (min-width : 2000px) {
     background-color: #1D262F;
     margin-left: -0.5%;
   }
-  
+
   .logo-box{
     width: 3.5%;
     height: 99%;
     border: 1px solid #87B4E5;
   }
-  
+
   .logo{
     max-width: 80px;
     margin-left: -2%;
     margin-top: 3px;
     position:relative;
   }
-  
+
   .main-box{
     margin-left: 4%;
     margin-top: -74px;
@@ -1140,12 +1140,12 @@ and (min-width : 2000px) {
     border: 1px solid #87B4E5;
     border-left-style: none;
   }
-  
+
   .cmd-box{
     margin-top: 0.68%;
     margin-left: 2%;
   }
-  
+
   .news-box{
     margin-top: -0.05%;
     margin-left: 0.01%;
@@ -1156,12 +1156,12 @@ and (min-width : 2000px) {
     border-top-style: none;
     border-bottom-style: none;
   }
-  
+
   .div-news{
     padding: 25px 25px 25px 25px;
     color: #87B4E5;
-  } 
-  
+  }
+
   .table-news{
     border: 1px solid #5C8CBE;
     border-collapse: collapse;
@@ -1170,19 +1170,19 @@ and (min-width : 2000px) {
     max-height: 500px;
     color: #87B4E5;
   }
-  
+
   .table-news td{
     border: 1px solid #5C8CBE;
     color: #87B4E5;
     width: 500px;
     height: 25px;
   }
-  
+
   .table-news tr:hover{
     background-color: #8856a7;
     cursor: pointer;
   }
-  
+
   input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select{
     border: 1px solid #87B4E5;
     background-color:#242e3f;
@@ -1444,7 +1444,7 @@ and (min-width : 2000px) {
     margin-top: 4%;
     margin-left: 65px;
   }
- 
+
   .notes-box{
     margin-left: 18.52%;
     margin-top: -1215px;
@@ -1571,7 +1571,7 @@ and (min-width : 2000px) {
   .events-columns{
     height: 25px;
     border-bottom: 1px solid #87B4E5;
-    width: 100%; 
+    width: 100%;
   }
   .events-columns td{
     border-right: 1px solid #87B4E5;
@@ -1579,13 +1579,12 @@ and (min-width : 2000px) {
     text-align: center;
   }
   .events-data{
-    width: 100%; 
+    width: 100%;
   }
-  
+
   .events-data td{
     border-right: 1px solid #87B4E5;
     border-bottom: 1px solid #87B4E5;
     text-align: center;
   }
 }
-

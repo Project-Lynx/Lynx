@@ -75,7 +75,7 @@ function Home() {
       var test = document.getElementById('note-item');
       test.remove();
     } catch (e) {
-      
+
     }
   }
   function SaveNotes() {
@@ -91,7 +91,7 @@ function Home() {
         output.push({ text : element.value });
       }
     });
-  
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -100,10 +100,10 @@ function Home() {
     fetch('http://127.0.0.1:5000/UpdateNotes', requestOptions)
   }
 
-  
+
   function ImportNotes() {
     var key = Object.keys(Notes)[0]
-    
+
     for (var i=0; i < Notes[key].length; i++) {
       if (Notes[key][i].Type == "title") {
         var name = "Title";
@@ -127,10 +127,10 @@ function Home() {
       }
     }
   };
-  
-  
+
+
   var qKeys = Object.keys(Quotes)
-  
+
   var q1Symbol = qKeys[0]
   var q1Url = Quotes[qKeys[0]]["url"]
   var q1Name = Quotes[qKeys[0]]["name"]
@@ -231,7 +231,7 @@ function Home() {
         })
       }
     } catch (e) {
-      
+
     }
   }
 
@@ -239,7 +239,7 @@ function Home() {
     <div className="row">
 
       <div className="top-bar">
-        
+
         <div className="logo-box">
           <img src={logo} className="logo" alt="logo" />
         </div>
@@ -247,7 +247,7 @@ function Home() {
         <div className="main-box">
           <div  className="cmd-box">
             <form action="/test" method="get">
-              <input 
+              <input
                   type="text"
                   id="input"
                   placeholder="Enter Command..."
@@ -272,7 +272,7 @@ function Home() {
           <div className="q1">
             <div className="q1-main">
               <div className="q1-symbol" onClick={()=> window.open(q1Url, "_blank")}>
-                <h3>{q1Symbol}</h3>            
+                <h3>{q1Symbol}</h3>
               </div>
               <div className="q1-name">
                 <p>{q1Name}</p>
@@ -291,7 +291,7 @@ function Home() {
           <div className="q2">
             <div className="q2-main">
               <div className="q2-symbol" onClick={()=> window.open(q2Url, "_blank")}>
-                <h3>{q2Symbol}</h3>            
+                <h3>{q2Symbol}</h3>
               </div>
               <div className="q2-name">
                 <p>{q2Name}</p>
@@ -309,7 +309,7 @@ function Home() {
           <div className="q3">
             <div className="q3-main">
               <div className="q3-symbol" onClick={()=> window.open(q3Url, "_blank")}>
-                <h3>{q3Symbol}</h3>            
+                <h3>{q3Symbol}</h3>
               </div>
               <div className="q3-name">
                 <p>{q3Name}</p>
@@ -328,7 +328,7 @@ function Home() {
          <div className="q4">
           <div className="q4-main">
             <div className="q4-symbol" onClick={()=> window.open(q4Url, "_blank")}>
-              <h3>{q4Symbol}</h3>            
+              <h3>{q4Symbol}</h3>
             </div>
             <div className="q4-name">
               <p>{q4Name}</p>
@@ -346,7 +346,7 @@ function Home() {
         <div className="q5">
           <div className="q5-main">
             <div className="q5-symbol" onClick={()=> window.open(q5Url, "_blank")}>
-              <h3>{q5Symbol}</h3>            
+              <h3>{q5Symbol}</h3>
             </div>
             <div className="q5-name">
               <p>{q5Name}</p>
@@ -364,7 +364,7 @@ function Home() {
         <div className="q6">
           <div className="q6-main">
             <div className="q6-symbol" onClick={()=> window.open(q6Url, "_blank")}>
-              <h3>{q6Symbol}</h3>            
+              <h3>{q6Symbol}</h3>
             </div>
             <div className="q6-name">
               <p>{q6Name}</p>
@@ -400,7 +400,7 @@ function Home() {
               <span onClick={() => ImportNotes()}>Import</span>
             </div>
           </div>
-          
+
           <div id="notes-content">
             <div id="workspace">
 
