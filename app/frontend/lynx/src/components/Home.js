@@ -424,6 +424,7 @@ function Home() {
             {eventsTable()}
           </table>
       </div>
+
   </div>
   )
 }
