@@ -7,8 +7,14 @@ function Home() {
   // Getting econ events from flask api
   const [Events, setEvents] = useState('not working');
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/EconEvents').then(res => res.json()).then(data => {
+    const payload = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: "US"
+    };
+    fetch('http://127.0.0.1:5000/EconEvents', payload).then(res => res.json()).then(data => {
       setEvents(data);
+      console.log(data)
     })
   }, []);
 
@@ -177,19 +183,19 @@ function Home() {
           </td>
 
           <td style={{width: 78 + 'px'}}>
-            {Events[key]["Region"]}
+            {Events[key][0]}
           </td>
 
           <td style={{width: 200 + 'px'}}>
-            {Events[key]["Time"]}
+            {Events[key][1]}
           </td>
 
           <td style={{width: 94 + 'px'}}>
-            {Events[key]["Expectation"]}
+            {Events[key][2]}
           </td>
 
           <td style={{borderRight: 'none'}}>
-            {Events[key]["Actual"]}
+            {Events[key][3]}
           </td>
 
         </tr>
