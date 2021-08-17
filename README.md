@@ -1,5 +1,5 @@
 # Lynx
-Open Source finance platform, This is a plug and play platform for the user to build off and tailor suit it for their own personal means of keeping up with financial markets.
+Open Source finance platform, This is a plug and play sandbox like platform for the user to build off and tailor suit for their personal means of keeping up with financial markets.
 
 
 ## Getting Started
