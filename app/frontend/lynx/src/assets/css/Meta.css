@@ -1,0 +1,90 @@
+body{
+  background-color: #242E3F;
+  color: #fff;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Wide screens */
+@media only screen
+and (min-width : 1224px) {
+
+    /* Top Bar*/
+    .top-bar-box{
+        width: 100%;
+        height: 75px;
+        background-color: #1D262F;
+        border: 1px solid #87B4E5;
+    }
+    .logo-box{
+      margin-left: 0.45%;
+      width: 6%;
+      height: 99%;
+      border: 1px solid #87B4E5;
+      border-top: none;
+    }
+    .logo{
+      max-width: 80px;
+      margin-left: 7.8%;
+      margin-top: 3px;
+      position:relative;
+    }
+    .main-box{
+      margin-left: 6.5%;
+      margin-top: -74px;
+      height: 98%;
+    }
+    .cmd-box{
+      margin-top: 0.75%;
+      margin-left: 2%;
+    }
+    input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select{
+      border: 1px solid #87B4E5;
+      background-color:#242e3f;
+      border-radius: 5px;
+      color: #87B4E5;
+    }
+}
+
+/* Ultra Wide screens */
+@media only screen 
+and (min-width : 2000px) {
+  .top-bar{
+    width: 100.5%;
+    height: 75px;
+    background-color: #1D262F;
+    margin-left: -0.5%;
+    border: 1px solid #87B4E5;
+    border-top: none;
+  }
+  .logo-box{
+    width: 3.5%;
+    height: 99%;
+    border: 1px solid #87B4E5;
+    border-top: none;
+    border-bottom: none;
+  }
+  .logo{
+    max-width: 80px;
+    margin-left: -2%;
+    margin-top: 3px;
+    position:relative;
+  }
+  .main-box{
+    margin-left: 4%;
+    margin-top: -74px;
+    height: 98%;
+    border-left-style: none;
+    border-top-style: none;
+  }
+  .cmd-box{
+    margin-top: 0.68%;
+    margin-left: 2%;
+  }
+  input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select{
+    border: 1px solid #87B4E5;
+    background-color:#242e3f;
+    border-radius: 5px;
+    color: #87B4E5;
+  }
+}

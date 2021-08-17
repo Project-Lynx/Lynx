@@ -1,0 +1,86 @@
+/* Wide screens */
+@media only screen
+and (min-width : 1224px) {
+    .news-box{
+      margin-top: -0.05%;
+      margin-left: 0.5%;
+      width: 25%;
+      background-color: #1D262F;
+      border: 1px solid #87B4E5;
+      border-bottom-style: none;
+    }
+
+    .div-news{
+      padding: 25px 25px 25px 25px;
+      color: #87B4E5;
+    }
+
+    .table-news{
+      border: 1px solid #5C8CBE;
+      border-collapse: collapse;
+      background-color: #242E3F;
+      max-height: 500px;
+      color: #87B4E5;
+    }
+
+    .table-news td{
+      border: 1px solid #5C8CBE;
+      color: #87B4E5;
+      width: 500px;
+    }
+
+    .table-news tr:hover{
+      background-color: #8856a7;
+      cursor: pointer;
+    }
+
+    input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select{
+      border: 1px solid #87B4E5;
+      background-color:#242e3f;
+      border-radius: 5px;
+      color: #87B4E5;
+    }
+}
+
+/* Ultra Wide screens */
+@media only screen
+and (min-width : 2000px) {
+    .news-box{
+      margin-top: 0.05%;
+      margin-left: 0.01%;
+      width: 18.5%;
+      height: 100%;
+      background-color: #1D262F;
+      border: 1px solid #87B4E5;
+      border-top-style: none;
+      border-bottom-style: none;
+    }
+    .div-news{
+      padding: 25px 25px 25px 25px;
+      color: #87B4E5;
+    }
+    .table-news{
+      border: 1px solid #5C8CBE;
+      border-collapse: collapse;
+      background-color: #242E3F;
+      min-height: 500px;
+      max-height: 500px;
+      color: #87B4E5;
+    }
+    .table-news td{
+      border: 1px solid #5C8CBE;
+      color: #87B4E5;
+      width: 500px;
+      height: 25px;
+    }
+    .table-news tr:hover{
+      background-color: #8856a7;
+      cursor: pointer;
+    }
+    input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select{
+      border: 1px solid #87B4E5;
+      background-color:#242e3f;
+      border-radius: 5px;
+      color: #87B4E5;
+    }
+}

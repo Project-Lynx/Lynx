@@ -1,5 +1,5 @@
-import logo from '../assets/logo.svg';
-import '../assets/css/App.css';
+import logo from './../../assets/logo.svg';
+import './../../assets/css/Landingpage/App.css';
 import { Helmet } from 'react-helmet';
 
 function App() {

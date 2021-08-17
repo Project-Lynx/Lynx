@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
 import './assets/css/index.css';
-import App from './components/App'
-import Home from './components/Home'
+import App from './components/Landingpage/App'
+import Home from './components/Homepage/Home'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render((
