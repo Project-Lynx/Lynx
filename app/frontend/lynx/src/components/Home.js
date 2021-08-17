@@ -4,6 +4,20 @@ import './../assets/css/Home.css';
 
 function Home() {
 
+  // Getting econ events from flask api
+  const [Events, setEvents] = useState('not working');
+  useEffect(() => {
+    const payload = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: "US"
+    };
+    fetch('http://127.0.0.1:5000/EconEvents', payload).then(res => res.json()).then(data => {
+      setEvents(data);
+      console.log(data)
+    })
+  }, []);
+
   // Getting saved notes from flask api
   const [Notes, setNotes] = useState('not working');
   useEffect(() => {
@@ -67,7 +81,7 @@ function Home() {
       var test = document.getElementById('note-item');
       test.remove();
     } catch (e) {
-      
+
     }
   }
   function SaveNotes() {
@@ -83,7 +97,7 @@ function Home() {
         output.push({ text : element.value });
       }
     });
-  
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -92,10 +106,10 @@ function Home() {
     fetch('http://127.0.0.1:5000/UpdateNotes', requestOptions)
   }
 
-  
+
   function ImportNotes() {
     var key = Object.keys(Notes)[0]
-    
+
     for (var i=0; i < Notes[key].length; i++) {
       if (Notes[key][i].Type == "title") {
         var name = "Title";
@@ -119,10 +133,10 @@ function Home() {
       }
     }
   };
-  
-  
+
+
   var qKeys = Object.keys(Quotes)
-  
+
   var q1Symbol = qKeys[0]
   var q1Url = Quotes[qKeys[0]]["url"]
   var q1Name = Quotes[qKeys[0]]["name"]
@@ -159,6 +173,36 @@ function Home() {
   var q6Last = Quotes[qKeys[5]]["last"]
   var q6PChange = Quotes[qKeys[5]]["pchange"]
 
+  function eventsTable() {
+    var keys = Object.keys(Events);
+    return keys.map((key, index) => {
+      return (
+        <tr>
+          <td style={{width: 200 + 'px'}}>
+            {key}
+          </td>
+
+          <td style={{width: 78 + 'px'}}>
+            {Events[key][0]}
+          </td>
+
+          <td style={{width: 200 + 'px'}}>
+            {Events[key][1]}
+          </td>
+
+          <td style={{width: 94 + 'px'}}>
+            {Events[key][2]}
+          </td>
+
+          <td style={{borderRight: 'none'}}>
+            {Events[key][3]}
+          </td>
+
+        </tr>
+      )
+    })
+  }
+
 
   function table_() {
 
@@ -193,7 +237,7 @@ function Home() {
         })
       }
     } catch (e) {
-      
+
     }
   }
 
@@ -201,7 +245,7 @@ function Home() {
     <div className="row">
 
       <div className="top-bar">
-        
+
         <div className="logo-box">
           <img src={logo} className="logo" alt="logo" />
         </div>
@@ -209,7 +253,7 @@ function Home() {
         <div className="main-box">
           <div  className="cmd-box">
             <form action="/test" method="get">
-              <input 
+              <input
                   type="text"
                   id="input"
                   placeholder="Enter Command..."
@@ -234,7 +278,7 @@ function Home() {
           <div className="q1">
             <div className="q1-main">
               <div className="q1-symbol" onClick={()=> window.open(q1Url, "_blank")}>
-                <h3>{q1Symbol}</h3>            
+                <h3>{q1Symbol}</h3>
               </div>
               <div className="q1-name">
                 <p>{q1Name}</p>
@@ -253,7 +297,7 @@ function Home() {
           <div className="q2">
             <div className="q2-main">
               <div className="q2-symbol" onClick={()=> window.open(q2Url, "_blank")}>
-                <h3>{q2Symbol}</h3>            
+                <h3>{q2Symbol}</h3>
               </div>
               <div className="q2-name">
                 <p>{q2Name}</p>
@@ -271,7 +315,7 @@ function Home() {
           <div className="q3">
             <div className="q3-main">
               <div className="q3-symbol" onClick={()=> window.open(q3Url, "_blank")}>
-                <h3>{q3Symbol}</h3>            
+                <h3>{q3Symbol}</h3>
               </div>
               <div className="q3-name">
                 <p>{q3Name}</p>
@@ -290,7 +334,7 @@ function Home() {
          <div className="q4">
           <div className="q4-main">
             <div className="q4-symbol" onClick={()=> window.open(q4Url, "_blank")}>
-              <h3>{q4Symbol}</h3>            
+              <h3>{q4Symbol}</h3>
             </div>
             <div className="q4-name">
               <p>{q4Name}</p>
@@ -308,7 +352,7 @@ function Home() {
         <div className="q5">
           <div className="q5-main">
             <div className="q5-symbol" onClick={()=> window.open(q5Url, "_blank")}>
-              <h3>{q5Symbol}</h3>            
+              <h3>{q5Symbol}</h3>
             </div>
             <div className="q5-name">
               <p>{q5Name}</p>
@@ -326,7 +370,7 @@ function Home() {
         <div className="q6">
           <div className="q6-main">
             <div className="q6-symbol" onClick={()=> window.open(q6Url, "_blank")}>
-              <h3>{q6Symbol}</h3>            
+              <h3>{q6Symbol}</h3>
             </div>
             <div className="q6-name">
               <p>{q6Name}</p>
@@ -362,7 +406,7 @@ function Home() {
               <span onClick={() => ImportNotes()}>Import</span>
             </div>
           </div>
-          
+
           <div id="notes-content">
             <div id="workspace">
 
@@ -370,6 +414,23 @@ function Home() {
           </div>
         </div>
       </div>
+
+      <div className="events-box">
+          <table className="events-columns">
+               <tr>
+                   <td style={{width: 200 + 'px'}}>Event</td>
+                   <td style={{width: 50 + 'px'}}>Region</td>
+                   <td style={{width: 200 + 'px'}}>Time</td>
+                   <td style={{width: 50 + 'px'}}>Expected</td>
+                   <td style={{border: 'none'}}>Actual</td>
+               </tr>
+          </table>
+
+          <table className="events-data" id="event-rows">
+            {eventsTable()}
+          </table>
+      </div>
+
   </div>
   )
 }

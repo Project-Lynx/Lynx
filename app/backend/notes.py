@@ -1,25 +1,12 @@
-#----------------------------
-# Import modules
-#----------------------------
-from bs4 import BeautifulSoup as bs
-from app.util import conversion
-from flask import jsonify
-import requests as req
-import datetime as dt
-import json
 import csv
-#----------------------------
+import datetime as dt
+
+from app.util import conversion
 
 
-#----------------------------
-# Update notes data
-#----------------------------
 def update(data):
-
-    # Use timestamp as saved notes index
     timestamp = dt.datetime.now().strftime("%m/%d/%Y %H:%M")
 
-    # Parsing data
     data = list(data.split("{"))
     types = []
     content = []
@@ -34,26 +21,18 @@ def update(data):
 
             content.append(content_text)
 
-    # Render rows for dataset
-    column_names = ["Timestamp","Type","Content"]
+    column_names = ["Timestamp", "Type", "Content"]
     rows = []
     for idx in enumerate(types):
-        rows.append([timestamp,idx[1],content[idx[0]]])
-   
-    # Add rows to dataset
+        rows.append([timestamp, idx[1], content[idx[0]]])
+
     with open('app/data/notes.csv', 'w') as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(column_names)
 
         for row in rows:
             csvwriter.writerow(row)
-#----------------------------
-   
-#----------------------------
-# Exporting Notes to web app
-#----------------------------
-def export():
 
-    # Returning json version of notes csv file
+
+def export():
     return conversion.csv_to_json('app/data/notes.csv')
-#----------------------------

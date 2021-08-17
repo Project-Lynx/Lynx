@@ -1,37 +1,35 @@
-#----------------------------
-# Import modules
-#----------------------------
-from app.util import keys
-from app.backend import newsfeed, yfin, notes
-from flask import Flask, jsonify, request
+from flask import Flask, request
 from flask_cors import CORS
-import requests as req
-import pandas as pd
-import json
-#----------------------------
+
+from app.backend import events, market_data, newsfeed, notes
+
 app = Flask(__name__)
 CORS(app)
 
-"""
-    Newsfeed endpoint 
-"""
+
 @app.route('/News')
 def News():
     data = newsfeed.get_feed()
+
     return data
 
-"""
-    Quotes endpoint
-"""
+
 @app.route('/Quotes', methods=['POST'])
 def Quotes():
     symbols = (request.data).decode("utf-8")
-    data = yfin.get_quotes(symbols)
+    data = market_data.get_quotes(symbols)
+
     return data
 
-"""
-    Update notes
-"""
+
+@app.route('/Hist', methods=['POST'])
+def Hist():
+    symbol = (request.data).decode("utf-8")
+    data = market_data.get_hist(symbol)
+
+    return data
+
+
 @app.route('/UpdateNotes', methods=['POST'])
 def UpdateNotes():
     data = (request.data).decode("utf-8")
@@ -39,18 +37,28 @@ def UpdateNotes():
 
     return "Success!"
 
-"""
-   Endpoint to import notes to web app
-"""
+
 @app.route('/ExportNotes')
 def ExportNotes():
     data = notes.export()
+
     return data
-    
-    
-#-----------------------
-# Run Server
-#-----------------------
+
+
+@app.route('/EconEvents', methods=['POST'])
+def EconEvents():
+    regions = (request.data).decode("utf-8")
+    data = events.get_events(regions)
+
+    return data
+
+
+@app.route('/5min')
+def Min5():
+    data = market_data.get_5min("SPY")
+
+    return data
+
+
 if __name__ == "__main__":
     app.run(debug=True)
-#-----------------------
