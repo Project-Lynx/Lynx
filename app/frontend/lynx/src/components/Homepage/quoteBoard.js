@@ -9,7 +9,7 @@ const QuoteBoard = () => {
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: "ES=F,ZN=F,GE=F,DX=F,CL=F,NG=F"
+        body: "ES,ZN,GE,BTC,CL,NG"
       };
       fetch('http://127.0.0.1:5000/Quotes', requestOptions)
         .then(res => res.json()).then(data => {
@@ -19,35 +19,35 @@ const QuoteBoard = () => {
 
     var qKeys = Object.keys(Quotes)
     var q1Symbol = qKeys[0]
-    var q1Url = Quotes[qKeys[0]]["url"]
-    var q1Name = Quotes[qKeys[0]]["name"]
-    var q1Last = Quotes[qKeys[0]]["last"]
-    var q1PChange = Quotes[qKeys[0]]["pchange"]
+    var q1Url = Quotes[qKeys[0]][3]
+    var q1Name = Quotes[qKeys[0]][0]
+    var q1Last = Quotes[qKeys[0]][1]
+    var q1PChange = Quotes[qKeys[0]][2]
     var q2Symbol = qKeys[1]
-    var q2Url = Quotes[qKeys[1]]["url"]
-    var q2Name = Quotes[qKeys[1]]["name"]
-    var q2Last = Quotes[qKeys[1]]["last"]
-    var q2PChange = Quotes[qKeys[1]]["pchange"]
+    var q2Url = Quotes[qKeys[1]][3]
+    var q2Name = Quotes[qKeys[1]][0]
+    var q2Last = Quotes[qKeys[1]][1]
+    var q2PChange = Quotes[qKeys[1]][2]
     var q3Symbol = qKeys[2]
-    var q3Url = Quotes[qKeys[2]]["url"]
-    var q3Name = Quotes[qKeys[2]]["name"]
-    var q3Last = Quotes[qKeys[2]]["last"]
-    var q3PChange = Quotes[qKeys[2]]["pchange"]
+    var q3Url = Quotes[qKeys[2]][3]
+    var q3Name = Quotes[qKeys[2]][0]
+    var q3Last = Quotes[qKeys[2]][1]
+    var q3PChange = Quotes[qKeys[2]][2]
     var q4Symbol = qKeys[3]
-    var q4Url = Quotes[qKeys[3]]["url"]
-    var q4Name = Quotes[qKeys[3]]["name"]
-    var q4Last = Quotes[qKeys[3]]["last"]
-    var q4PChange = Quotes[qKeys[3]]["pchange"]
+    var q4Url = Quotes[qKeys[3]][3]
+    var q4Name = Quotes[qKeys[3]][0]
+    var q4Last = Quotes[qKeys[3]][1]
+    var q4PChange = Quotes[qKeys[3]][2]
     var q5Symbol = qKeys[4]
-    var q5Url = Quotes[qKeys[4]]["url"]
-    var q5Name = Quotes[qKeys[4]]["name"]
-    var q5Last = Quotes[qKeys[4]]["last"]
-    var q5PChange = Quotes[qKeys[4]]["pchange"]
+    var q5Url = Quotes[qKeys[4]][3]
+    var q5Name = Quotes[qKeys[4]][0]
+    var q5Last = Quotes[qKeys[4]][1]
+    var q5PChange = Quotes[qKeys[4]][2]
     var q6Symbol = qKeys[5]
-    var q6Url = Quotes[qKeys[5]]["url"]
-    var q6Name = Quotes[qKeys[5]]["name"]
-    var q6Last = Quotes[qKeys[5]]["last"]
-    var q6PChange = Quotes[qKeys[5]]["pchange"]
+    var q6Url = Quotes[qKeys[5]][3]
+    var q6Name = Quotes[qKeys[5]][0]
+    var q6Last = Quotes[qKeys[5]][1]
+    var q6PChange = Quotes[qKeys[5]][2]
 
     return (
       <div className="quotes">
