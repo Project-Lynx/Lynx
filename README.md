@@ -1,7 +1,7 @@
 # Lynx
 Open Source finance platform, This is a plug and play sandbox like platform for the user to build off and tailor suit for their personal means of keeping up with financial markets.
 
-<img src="https://i.ibb.co/FJW3fnf/lynx-banner.png" width="500"/>
+<img src="https://i.ibb.co/FJW3fnf/lynx-banner.png" width="1000"/>
 
 ## Getting Started
 
