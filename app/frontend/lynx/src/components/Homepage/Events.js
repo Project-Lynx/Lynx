@@ -8,11 +8,10 @@ const EconEvents = () => {
       const payload = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: "US"
+        body: "US,"
       };
       fetch('http://127.0.0.1:5000/EconEvents', payload).then(res => res.json()).then(data => {
         setEvents(data);
-        console.log(data)
       })
     }, []);
 
@@ -22,19 +21,19 @@ const EconEvents = () => {
           return (
             <tr>
               <td style={{width: 200 + 'px'}}>
-                {key}
-              </td>
-              <td style={{width: 78 + 'px'}}>
                 {Events[key][0]}
               </td>
-              <td style={{width: 200 + 'px'}}>
+              <td style={{width: 78 + 'px'}}>
                 {Events[key][1]}
               </td>
-              <td style={{width: 94 + 'px'}}>
+              <td style={{width: 200 + 'px'}}>
                 {Events[key][2]}
               </td>
-              <td style={{borderRight: 'none'}}>
+              <td style={{width: 94 + 'px'}}>
                 {Events[key][3]}
+              </td>
+              <td style={{borderRight: 'none'}}>
+                {Events[key][4]}
               </td>
             </tr>
           )

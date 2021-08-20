@@ -1,7 +1,7 @@
 import csv
 import datetime as dt
 
-from app.util import conversion
+from app.backend.util import conversion
 
 
 def update(data):
@@ -26,7 +26,7 @@ def update(data):
     for idx in enumerate(types):
         rows.append([timestamp, idx[1], content[idx[0]]])
 
-    with open('app/data/notes.csv', 'w') as csvfile:
+    with open('app/backend/data/notes.csv', 'w') as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(column_names)
 
@@ -35,4 +35,4 @@ def update(data):
 
 
 def export():
-    return conversion.csv_to_json('app/data/notes.csv')
+    return conversion.csv_to_json('app/backend/data/notes.csv')
