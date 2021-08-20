@@ -1,5 +1,5 @@
 # Lynx
-Open Source finance platform, craft your own platform ontop of Lynx tailor fit to meet your own personal demands for keeping up with financial markets.
+Open source finance platform, use Lynx to build your own platform for keeping up with financial markets.
 
 <img src="https://i.ibb.co/FJW3fnf/lynx-banner.png" width="1000"/>
 
