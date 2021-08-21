@@ -19,6 +19,13 @@ def get_feed():
         d2 = str(title)[d1:].find('"') + d1
         urls.append(f"https://finance.yahoo.com{str(title)[d1:d2]}")
 
+        if "TSG-" in title.text:
+            title_ = str(title.text).replace("TSG-", "")
+            if len(title_) >= 69:
+                title_ = title_[:69] + "..."
+            titles.append(title_)
+            continue
+
         if "UPDATE 1-" in title.text:
             title_ = str(title.text).replace("UPDATE 1-", "")
             if len(title_) >= 69:
