@@ -11,8 +11,8 @@ const Notes = () => {
     }, []);
 
     var titles = new Array();
-    var texts = new Array();  
-    
+    var texts = new Array();
+
     function NewTitle() {
       var name = "Title";
       var newTitle = document.createElement('input');
@@ -58,7 +58,7 @@ const Notes = () => {
           output.push({ text : element.value });
         }
       });
-    
+
       const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
