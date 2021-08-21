@@ -1,6 +1,7 @@
-from app.backend.repositories import (newsfeed as news_repo,
-                                      events as events_repo)
 from flask import Blueprint, request
+
+from app.backend.repositories import events as events_repo
+from app.backend.repositories import newsfeed as news_repo
 
 blueprint = Blueprint("news_n_events", __name__)
 

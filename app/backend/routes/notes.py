@@ -1,5 +1,6 @@
-from app.backend.repositories import notes as notes_repo
 from flask import Blueprint, request
+
+from app.backend.repositories import notes as notes_repo
 
 blueprint = Blueprint("notes", __name__)
 

@@ -1,8 +1,9 @@
-from app.backend import config
-
-from flask import jsonify
-import requests as req
 import json
+
+import requests as req
+from flask import jsonify
+
+from app.backend import config
 
 
 def get_quotes(symbols):
