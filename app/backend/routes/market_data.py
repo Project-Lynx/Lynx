@@ -1,5 +1,6 @@
-from app.backend.repositories import market_data as mkt_repo
 from flask import Blueprint, request
+
+from app.backend.repositories import market_data as mkt_repo
 
 blueprint = Blueprint("market_data", __name__)
 

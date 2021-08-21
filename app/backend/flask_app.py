@@ -1,7 +1,7 @@
-from app.backend.routes import (news_n_events, notes,
-                                market_data)
 from flask import Flask
 from flask_cors import CORS
+
+from app.backend.routes import market_data, news_n_events, notes
 
 application = Flask(__name__)
 app = application

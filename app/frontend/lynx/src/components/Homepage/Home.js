@@ -2,6 +2,7 @@ import News from './News'
 import quoteBoard from './quoteBoard'
 import Notes from './Notes'
 import EconEvents from './Events'
+import Graph from './Graph'
 import TopBar from './topBar'
 
 import './../../assets/css/Meta.css';
@@ -34,6 +35,10 @@ function Home() {
 
       <div className="events-box">
         {EconEvents()}
+      </div>
+
+      <div className="graph-box">
+        {Graph()}
       </div>
 
   </div>

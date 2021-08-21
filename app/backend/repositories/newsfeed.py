@@ -2,6 +2,8 @@ import requests as req
 from bs4 import BeautifulSoup as bs
 from flask import jsonify
 
+from app.backend.util import news_filters
+
 
 def get_feed():
     url = "https://finance.yahoo.com/news"
@@ -18,124 +20,13 @@ def get_feed():
         d1 = str(title).find("href") + 6
         d2 = str(title)[d1:].find('"') + d1
         urls.append(f"https://finance.yahoo.com{str(title)[d1:d2]}")
+        titles.append(title)
 
-        if "TSG-" in title.text:
-            title_ = str(title.text).replace("TSG-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "UPDATE 1-" in title.text:
-            title_ = str(title.text).replace("UPDATE 1-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "UPDATE 2-" in title.text:
-            title_ = str(title.text).replace("UPDATE 2-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "UPDATE 3-" in title.text:
-            title_ = str(title.text).replace("UPDATE 3-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "UPDATE 4-" in title.text:
-            title_ = str(title.text).replace("UPDATE 4-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "UPDATE 5-" in title.text:
-            title_ = str(title.text).replace("UPDATE 5-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "Exclusive-" in title.text:
-            title_ = str(title.text).replace("Exclusive-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "US STOCKS-" in title.text:
-            title_ = str(title.text).replace("US STOCKS-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "COVID SCIENCE-" in title.text:
-            title_ = str(title.text).replace("COVID SCIENCE-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "TREASURIES-" in title.text:
-            title_ = str(title.text).replace("TREASURIES-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "EMERGING MARKETS-" in title.text:
-            title_ = str(title.text).replace("EMERGING MARKETS-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "GLOBAL MARKETS-" in title.text:
-            title_ = str(title.text).replace("GLOBAL MARKETS-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "FOREX-" in title.text:
-            title_ = str(title.text).replace("FOREX-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "RPT-" in title.text:
-            title_ = str(title.text).replace("RPT-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-            continue
-
-        if "Olympics-" in title.text:
-            title_ = str(title.text).replace("Olympics-", "")
-            if len(title_) >= 69:
-                title_ = title_[:69] + "..."
-            titles.append(title_)
-
-        else:
-            if len(title.text) >= 69:
-                title = title.text[:69] + "..."
-                titles.append(title)
-                continue
-
-            else:
-                titles.append(title.text)
-                continue
+    titles_filtered = news_filters.clean(titles)
 
     for idx in enumerate(urls):
         output[f"Article {idx[0]+1}"] = {
-            'Title': titles[idx[0]],
+            'Title': titles_filtered[idx[0]],
             'Url': idx[1],
         }
 
