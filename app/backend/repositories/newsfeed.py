@@ -1,8 +1,8 @@
-from app.backend.util import news_filters
-
 import requests as req
 from bs4 import BeautifulSoup as bs
 from flask import jsonify
+
+from app.backend.util import news_filters
 
 
 def get_feed():
