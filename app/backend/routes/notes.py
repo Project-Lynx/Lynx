@@ -4,6 +4,7 @@ from app.backend.repositories import notes as notes_repo
 
 blueprint = Blueprint("notes", __name__)
 
+
 @blueprint.route('/UpdateNotes', methods=['POST'])
 def UpdateNotes():
     data = (request.data).decode("utf-8")
