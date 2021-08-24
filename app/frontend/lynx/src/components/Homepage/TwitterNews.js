@@ -30,7 +30,6 @@ const TwitterNews = () => {
             />
         </div>
     )
-
 }
 
 export default TwitterNews;
