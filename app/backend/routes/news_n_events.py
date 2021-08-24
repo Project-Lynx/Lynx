@@ -5,6 +5,7 @@ from app.backend.repositories import newsfeed as news_repo
 
 blueprint = Blueprint("news_n_events", __name__)
 
+
 @blueprint.route('/News')
 def News():
     data = news_repo.get_feed()
