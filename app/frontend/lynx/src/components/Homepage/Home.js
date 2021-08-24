@@ -4,6 +4,8 @@ import Notes from './Notes'
 import EconEvents from './Events'
 import Graph from './Graph'
 import TopBar from './topBar'
+import TwitterNews from './TwitterNews'
+import TwitterSocial from './TwitterSocial'
 
 import './../../assets/css/Meta.css';
 import './../../assets/css/Bootstrap.css';
@@ -39,6 +41,14 @@ function Home() {
 
       <div className="graph-box">
         {Graph()}
+      </div>
+
+      <div className="twitter-news-box">
+        {TwitterNews()}
+      </div>
+
+      <div className="twitter-social-box">
+        {TwitterSocial()}
       </div>
 
   </div>
