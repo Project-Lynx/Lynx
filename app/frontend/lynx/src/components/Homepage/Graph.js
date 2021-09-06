@@ -13,7 +13,6 @@ const Graph = () => {
     useEffect(() => {
       fetch('http://127.0.0.1:5000/Hist', payload).then(res => res.json()).then(data => {
         setHist(data);
-        console.log(data)
       });
     }, []);
 
@@ -44,7 +43,6 @@ const Graph = () => {
       if (typeof _data != "undefined") {
         const x_axis = Object.keys(_data)
         const y_axis = Object.values(_data)
-        console.log(Math.min(...y_axis))
 
         return (
           <div className="graph">
