@@ -1,0 +1,34 @@
+#events {
+  grid-area: events;
+  margin-top: -0.1%;
+  border: 1px solid #87B4E5;
+  border-left: none;
+  padding-top: var(--main-padding);
+  color: #fff;
+}
+.events-data {
+  width: 100%;
+  margin-top: -1%;
+}
+.events-data td {
+  border-right: 1px solid #87B4E5;
+  border-bottom: 1px solid #87B4E5;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+@media only screen
+and (min-width: 1224px) {
+  #events {
+    width: 75%;
+  }
+}
+
+/* Ultra Wide screens */
+@media only screen
+and (min-width : 2000px) {
+  #events {
+    margin-top: -0.05%;
+    width: 55%;
+  }
+}
