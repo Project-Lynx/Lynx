@@ -1,0 +1,25 @@
+#navbar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #87B4E5;
+  grid-area: nav;
+  padding-top: var(--main-padding);
+  text-align: left;
+}
+
+.logo {
+  max-width: 80px;
+}
+
+#cmd-box {
+  padding-left: 50px;
+}
+
+#input[type="email"], #input[type="number"], #input[type="search"], #input[type="text"], 
+#input[type="tel"], #input[type="url"], #input[type="password"], #textarea, #select {
+  border: 1px solid #87B4E5;
+  background-color:#242e3f;
+  border-radius: 5px;
+  color: #87B4E5;
+}
+
