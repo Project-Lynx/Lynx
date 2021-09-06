@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 
-import './../../assets/css/Homepage/graph.css'
+import './../../assets/css/Homepage/Graph.css'
 
 const Graph = () => {
     const [Hist, setHist] = useState('not working');
@@ -44,7 +44,7 @@ const Graph = () => {
       if (typeof _data != "undefined") {
         const x_axis = Object.keys(_data)
         const y_axis = Object.values(_data)
-        console.log(key)
+        console.log(Math.min(...y_axis))
 
         return (
           <div className="graph">
@@ -60,19 +60,19 @@ const Graph = () => {
                 </form>
               </div>
               <div className="buttons">
-                <div className="addIndic-btn">
+                <div className="chart-btn">
                   <div onClick={() => addIndic()}>Add Indicator</div>
                 </div>
-                <div className="addModel-btn">
+                <div className="chart-btn">
                   <div onClick={() => addModel()}>Add Model</div>
                 </div>
-                <div className="addSymbol-btn">
+                <div className="chart-btn">
                   <div onClick={() => addSymbol()}>Add Symbol</div>
                 </div>
-                <div className="timeFrame-btn">
+                <div className="chart-btn">
                   <div onClick={() => timeFrame()}>Timeframe</div>
                 </div>
-                <div className="plotType-btn">
+                <div className="chart-btn">
                   <div onClick={() => plotType()}>Plot Type</div>
                 </div>
               </div>
@@ -84,14 +84,19 @@ const Graph = () => {
                     x: x_axis,
                     y: y_axis,
                     type: 'scatter',
+                    fill: 'tonexty',
                     mode: 'lines+markers',
-                    marker: {color: 'rgba(255, 255, 255, 0.5)'},
+                    marker: {color: 'rgba(135, 180, 229, 0.5)'},
                   },
                 ]}
                 layout={ {
-                          width: 950, height: 500, title: key[0], plot_bgcolor: '#242e3f',
+                          title: key[0], plot_bgcolor: '#242e3f',
                           paper_bgcolor: '#1D262F', xaxis: {gridcolor: 'rgba(255, 255, 255, 0.15)'},
-                          yaxis: {gridcolor: 'rgba(255, 255, 255, 0.1)'}, font: {color: 'white'},
+                          yaxis: {gridcolor: 'rgba(255, 255, 255, 0.1)', range: [Math.min(...y_axis), Math.max(...y_axis) + 1]},
+                          font: {color: 'white'},
+                       } }
+                style= { {
+                          width: "100%", height: "100%"
                        } }
               />
             </div>
