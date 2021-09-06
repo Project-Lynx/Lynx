@@ -1,0 +1,42 @@
+#twitternews {
+  grid-area: twitter;
+  border-bottom: 1px solid #87B4E5;
+}
+#twittersocial {
+  grid-area: twitter;
+  border-bottom: 1px solid #87B4E5;
+  border-right: 1px solid #87B4E5;
+}
+
+@media only screen
+and (min-width: 1224px) {
+  #twitternews {
+    margin-left: -223px;
+    width: 365px;
+  }
+  #twittersocial {
+    margin-left: 142px;
+    width: 382px;
+  }
+  .twitter-timeline {
+    height: 300px !important;
+  }
+}
+
+/* Ultra Wide screens */
+@media only screen
+and (min-width : 2000px) {
+  #twitternews {
+    width: 100%;
+    margin-left: -610px;
+  }
+  #twittersocial {
+    width: 89.5%;
+    margin-left: 75px;
+  }
+  .twitter-timeline {
+    height: 450px !important;
+    width: 645px !important;
+  }
+}
+

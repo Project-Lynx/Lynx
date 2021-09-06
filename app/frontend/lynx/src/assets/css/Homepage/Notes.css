@@ -1,0 +1,74 @@
+#notes {
+  grid-area: notes;
+  padding-top: var(--main-padding);
+  width: 90%;
+}
+.notes-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #1D262F;
+  border-bottom: 1px solid #87B4E5;
+  color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.notes-btn1 {
+  padding: 5px 5px 5px 5px;
+  background-color:#242e3f;
+  border: 1px solid #87B4E5;
+}
+.notes-btn1:hover{
+  background-color: #8856a7;
+  cursor: pointer;
+}
+.notes-btn2{
+  margin-left: 5%;
+  padding: 5px 5px 5px 5px;
+  background-color:#242e3f;
+  border: 1px solid #87B4E5;
+}
+.notes-btn2:hover{
+  background-color: #8856a7;
+  cursor: pointer;
+}
+#workspace input[type="text"]{
+  border: none;
+  background: none;
+}
+#workspace textarea{
+  width: 100%;
+  background-color: #242e3f;
+  border-radius: 0px;
+  border: 1px solid #87B4E5;
+  border-left-style: none;
+  border-right-style: none;
+}
+.wrapper{
+  width: 600px;
+  margin: 0px auto;
+}
+.Title{
+  width: 100%;
+  height: 80px;
+  font-size: 48px;
+  text-align: center;
+  border: 0px;
+  -webkit-transition: all .1s;
+  font-weight: bold;
+  position: relative;
+}
+
+
+/* Ultra Wide screens */
+@media only screen
+and (min-width : 2000px) {
+  .notes-header {
+    width: 103.5%;
+  }
+  #workspace textarea{
+    width: 103.5%;
+  }
+}

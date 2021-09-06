@@ -13,6 +13,7 @@ def get_quotes(symbols):
 
     return jsonify(response), 200
 
+
 def get_hist(symbol):
     endpoint = '/get-hist'
     response = req.post(config.dReserve + endpoint, symbol)

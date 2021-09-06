@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
 import './assets/css/index.css';
 import App from './components/Landingpage/App'
-import Home from './components/Homepage/Home'
+import Home from './components/Homepage/Homepage'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render((

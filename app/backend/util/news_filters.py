@@ -1,10 +1,8 @@
 
 def clean(titles):
-    filter_words = ["REFILE-UPDATE 1-", "REFILE-UPDATE 2-", "REFILE-UPDATE 3-",
-                    "REFILE-UPDATE 4-", "REFILE-UPDATE 5-", "UPDATE 1-", "UPDATE 2-",
-                    "UPDATE 3-", "UPDATE 4-", "UPDATE 5-", "Exclusive-", "US STOCKS-",
-                    "COVID SCIENCE", "TREASURIES-", "EMERGING MARKETS-", "GLOBAL MARKETS",
-                    "FOREX-", "RPT-", "Olympics-",
+    filter_words = ["UPDATE 1-", "UPDATE 2-", "UPDATE 3-", "UPDATE 4-", "UPDATE 5-",
+                    "Exclusive-", "US STOCKS-", "COVID SCIENCE", "TREASURIES-", "EMERGING MARKETS-",
+                    "GLOBAL MARKETS", "FOREX-", "RPT-", "Olympics-", 'EXPERT:',
                     ]
 
     titles_cleaned = []
@@ -12,14 +10,14 @@ def clean(titles):
         for fw in filter_words:
             if fw in title.text:
                 title_cleaned = str(title.text).replace(fw, "")
-                if len(title_cleaned) >= 69:
-                    title_cleaned = title_cleaned[:69] + '...'
+                if len(title_cleaned) >= 57:
+                    title_cleaned = title_cleaned[:57] + '...'
                 titles_cleaned.append(title_cleaned)
                 break
 
             else:
-                if len(title.text) >= 69:
-                    title_cleaned = title.text[:69] + '...'
+                if len(title.text) >= 57:
+                    title_cleaned = title.text[:57] + '...'
                     titles_cleaned.append(title_cleaned)
                     break
                 else:

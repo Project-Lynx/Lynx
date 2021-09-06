@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import './../../assets/css/Homepage/events.css'
+import './../../assets/css/Homepage/Events.css'
 
-const EconEvents = () => {
+const Events = () => {
     const [Events, setEvents] = useState('not working');
     useEffect(() => {
       const payload = {
@@ -20,16 +20,16 @@ const EconEvents = () => {
         return keys.map((key, index) => {
           return (
             <tr>
-              <td style={{width: 200 + 'px'}}>
+              <td>
                 {Events[key][0]}
               </td>
-              <td style={{width: 78 + 'px'}}>
+              <td>
                 {Events[key][1]}
               </td>
-              <td style={{width: 200 + 'px'}}>
+              <td>
                 {Events[key][2]}
               </td>
-              <td style={{width: 94 + 'px'}}>
+              <td>
                 {Events[key][3]}
               </td>
               <td style={{borderRight: 'none'}}>
@@ -43,22 +43,21 @@ const EconEvents = () => {
     return (
         <div className="events-table">
 
-            <table className="events-columns">
-                 <tr>
-                     <td style={{width: 200 + 'px'}}>Event</td>
-                     <td style={{width: 50 + 'px'}}>Region</td>
-                     <td style={{width: 200 + 'px'}}>Time</td>
-                     <td style={{width: 50 + 'px'}}>Expected</td>
-                     <td style={{border: 'none'}}>Actual</td>
-                 </tr>
-            </table>
-
             <table className="events-data" id="event-rows">
-              {eventsTable()}
+              <thead>
+                <td> Event </td>
+                <td>Region</td>
+                <td>Time</td>
+                <td>Expected</td>
+                <td style={{borderRight: 'none', paddingRight: 10 + 'px'}}>Actual</td>
+              </thead>
+              <tbody>
+                {eventsTable()}
+              </tbody>
             </table>
 
         </div>
     )
 }
 
-export default EconEvents;
+export default Events;
