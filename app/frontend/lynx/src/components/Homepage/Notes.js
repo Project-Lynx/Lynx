@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import './../../assets/css/Homepage/notes.css'
+import './../../assets/css/Homepage/Notes.css'
 
 const Notes = () => {
     const [Notes, setNotes] = useState('not working');
@@ -96,18 +96,18 @@ const Notes = () => {
 
           <div className="notes-header">
             <div className="notes-btn1">
-              <div onClick={() => NewTitle()}>New Title</div>
+              <div onClick={() => NewTitle()}>Title</div>
             </div>
             <div className="notes-btn2">
-              <div onClick={() => NewText()}>New Text</div>
+              <div onClick={() => NewText()}>Text</div>
             </div>
-            <div className="notes-btn3">
+            <div className="notes-btn2">
               <span onClick={() => ClearNotes()}>Clear</span>
             </div>
-            <div className="notes-btn4">
+            <div className="notes-btn2">
               <span onClick={() => SaveNotes()}>Save</span>
             </div>
-            <div className="notes-btn5">
+            <div className="notes-btn2">
               <span onClick={() => ImportNotes()}>Import</span>
             </div>
           </div>
