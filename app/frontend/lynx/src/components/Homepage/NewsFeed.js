@@ -1,54 +1,33 @@
-import { useState, useEffect } from 'react';
+/*
+    Twitter list for news
+
+    Default list: https://twitter.com/i/lists/1430053486146859046
+
+    You can make your own list if you have a twitter account
+    just edit "ownerScreenName" and "id", the id will be the
+    end of the link of your list for example the id to the
+    default list above would be: 1430053486146859046
+*/
+
+import { Timeline } from 'react-twitter-widgets';
 import './../../assets/css/Homepage/News.css'
 
 const NewsFeed = () => {
-  const [NewsData, setNewsData] = useState('');
-  useEffect(() => {
-    fetch('http://127.0.0.1:5000/News').then(res => res.json()).then(data => {
-      setNewsData(data);
-    });
-  }, []);
-
-  function newsTable() {
-    try {
-      console.log(NewsData)
-      if (typeof NewsData != "undefined") {
-        var test2 = {
-          articles: [
-            {Title: NewsData["Article 1"].Title, Url: NewsData["Article 1"].Url},
-            {Title: NewsData["Article 2"].Title, Url: NewsData["Article 2"].Url},
-            {Title: NewsData["Article 3"].Title, Url: NewsData["Article 3"].Url},
-            {Title: NewsData["Article 4"].Title, Url: NewsData["Article 4"].Url},
-            {Title: NewsData["Article 5"].Title, Url: NewsData["Article 5"].Url},
-            {Title: NewsData["Article 6"].Title, Url: NewsData["Article 6"].Url},
-            {Title: NewsData["Article 7"].Title, Url: NewsData["Article 7"].Url},
-            {Title: NewsData["Article 8"].Title, Url: NewsData["Article 8"].Url},
-            {Title: NewsData["Article 9"].Title, Url: NewsData["Article 9"].Url},
-            {Title: NewsData["Article 10"].Title, Url: NewsData["Article 10"].Url}
-          ]
-        }
-
-        return test2.articles.map((article, index) => {
-          const { Title, Url } = article
-          return (
-            <tr>
-              <td>
-                <a className="td-link" href={Url} target="_blank">
-                  {Title}
-                </a>
-              </td>
-            </tr>
-          )
-        })
-      }
-    } catch (e) {
-        console.log(e)
-     }
-  }
-
-  return newsTable();
-
+  return (
+            <Timeline
+                dataSource={{
+                    sourceType: 'list',
+                    ownerScreenName: "ProjectLynx_", // Your profile name
+                    id: "1430053486146859046", // Your list id (see above)
+                    layout: "responsive"
+                }}
+                options={{
+                    chrome: "noheader, nofooter",
+                    theme: "dark",
+                    height: "100"
+                }}
+            />
+  )
 }
 
 export default NewsFeed;
-
