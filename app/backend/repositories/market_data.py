@@ -20,3 +20,11 @@ def get_hist(symbol):
     response = json.loads(response.text)
 
     return jsonify(response), 200
+
+
+def get_curve(payload):
+    endpoint = '/get-curve'
+    response = req.post(config.dReserve + endpoint, payload)
+    response = json.loads(response.text)
+
+    return jsonify(response), 200
