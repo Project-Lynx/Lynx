@@ -53,11 +53,10 @@ and (min-width: 1224px) {
 @media only screen
 and (min-width : 2000px) {
   #graph {
-    width: 103.95%;   
+    width: 103.95%;
   }
   .canvas {
     width: 99%;
     height: 700px;
   }
 }
-
