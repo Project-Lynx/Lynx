@@ -18,7 +18,7 @@ useEffect(() => {
     },[]);
 
     var qKeys = Object.keys(Quotes)
-   
+
     return (
       <div className="quotes">
 
@@ -36,7 +36,7 @@ useEffect(() => {
           </div>
 
           <div className="q1">
-            <div className="q1-main" style={{borderBottom: 'none'}} 
+            <div className="q1-main" style={{borderBottom: 'none'}}
                  onClick={()=> window.open(Quotes[qKeys[1]][3], "_blank")}>
               <h3>{qKeys[1]}</h3>
               <p>{Quotes[qKeys[1]][0]}</p>
@@ -46,7 +46,7 @@ useEffect(() => {
               </div>
             </div>
           </div>
-          
+
           <div className="q1">
             <div className="q1-main" style={{borderRight: '1px solid #87B4E5', borderBottom: 'none'}}
                  onClick={()=> window.open(Quotes[qKeys[2]][3], "_blank")}>
@@ -82,9 +82,9 @@ useEffect(() => {
               </div>
             </div>
           </div>
-          
+
           <div className="q2">
-            <div className="q2-main" style={{borderRight: '1px solid #87B4E5'}} 
+            <div className="q2-main" style={{borderRight: '1px solid #87B4E5'}}
                  onClick={()=> window.open(Quotes[qKeys[5]][3], "_blank")}>
               <h3>{qKeys[5]}</h3>
               <p>{Quotes[qKeys[5]][0]}</p>
