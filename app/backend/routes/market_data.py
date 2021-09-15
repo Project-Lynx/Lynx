@@ -19,3 +19,11 @@ def Hist():
     data = mkt_repo.get_hist(symbol)
 
     return data
+
+
+@blueprint.route('/get-curve', methods=['POST'])
+def get_curve():
+    payload = (request.data).decode("utf-8")
+    data = mkt_repo.get_curve(payload)
+
+    return data
