@@ -5,42 +5,9 @@
   border-top: none;
 }
 
-#div-news{
-  padding: 25px 25px 25px 25px;
-  color: #87B4E5;
+.twitter-timeline {
+    width: 99.8% !important;
 }
-
-.table-news{
-  border: 1px solid #5C8CBE;
-  border-collapse: collapse;
-  background-color: #242E3F;
-  color: #87B4E5;
-  font-size: 12px;
+#twitter-widget-0 {
+  height: 60vh !important;
 }
-
-.table-news td{
-  border: 1px solid #5C8CBE;
-  color: #87B4E5;
-}
-
-.table-news tr:hover{
-  background-color: #8856a7;
-  cursor: pointer;
-}
-
-@media only screen
-and (min-width: 1224px) {
-  .table-news {
-    font-size: 1vi !important;
-  }
-}
-
-/* Ultra Wide screens */
-@media only screen
-and (min-width : 2000px) {
-  .table-news {
-    font-size: 24px;
-    width: 100%;
-  }
-}
-
