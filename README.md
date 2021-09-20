@@ -1,4 +1,5 @@
 # Lynx
+### (NOT READY FOR USE YET) it run's, but is still in early development.
 Open source finance platform, use Lynx to build your own platform for keeping up with financial markets.
 
 <img src="https://i.ibb.co/FJW3fnf/lynx-banner.png" width="1000"/>
