@@ -9,14 +9,14 @@ const SessionMap = () => {
   });
 
   return (
-    <ReactMapGL
-      {...viewport}
-      width="100%"
-      height="100%"
-      mapStyle="mapbox://styles/mapbox/light-v10"
-      mapboxApiAccessToken="pk.eyJ1IjoicHJvamVjdC1seW54IiwiYSI6ImNrdGx1OGYzcjF6dmMyb2s0djFjMTB6eXMifQ.vXKVyD-koXV0lqDWBtkHhg"
-      onViewportChange={(viewport) => setViewport(viewport)}
-    />
+   <ReactMapGL
+     {...viewport}
+     width="100%"
+     height="100%"
+     mapStyle="mapbox://styles/mapbox/light-v10"
+     mapboxApiAccessToken="pk.eyJ1IjoicHJvamVjdC1seW54IiwiYSI6ImNrdGx1OGYzcjF6dmMyb2s0djFjMTB6eXMifQ.vXKVyD-koXV0lqDWBtkHhg"
+     onViewportChange={(viewport) => setViewport(viewport)}
+   />
   );
 }
 
