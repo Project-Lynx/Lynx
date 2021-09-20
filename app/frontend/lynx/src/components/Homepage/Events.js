@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import './../../assets/css/Homepage/Events.css'
+import './../../assets/css/Homepage/Homepage.css'
 
 const Events = () => {
     const [Events, setEvents] = useState('not working');
