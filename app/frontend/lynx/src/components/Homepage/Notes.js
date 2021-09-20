@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import './../../assets/css/Homepage/Notes.css'
+import './../../assets/css/Homepage/Homepage.css'
 
 const Notes = () => {
     const [Notes, setNotes] = useState('not working');

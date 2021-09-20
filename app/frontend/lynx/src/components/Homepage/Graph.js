@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 
 import './../../assets/css/Homepage/Graph.css'
+import './../../assets/css/Homepage/Homepage.css'
 
 const Graph = () => {
     const [Hist, setHist] = useState('not working');
