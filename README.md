@@ -37,7 +37,7 @@ pip3 install -r requirements.txt
 To start the api:
 
 ```
-python3 api.py
+python3 application.py
 ```
 
 Now open a new terminal in the Lynx folder and start the react app:
