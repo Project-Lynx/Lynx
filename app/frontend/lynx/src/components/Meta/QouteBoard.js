@@ -6,15 +6,10 @@ import './../../assets/css/Meta/Bootstrap.css';
 const QuoteBoard = () => {
     const [Quotes, setQuotes] = useState('not working');
 useEffect(() => {
-  const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: "ES,ZN,GE,BTC,CL,NG"
-      };
-      fetch('http://127.0.0.1:5000/Quotes', requestOptions)
-        .then(res => res.json()).then(data => {
-          setQuotes(data);
-        })
+    fetch('http://18.119.100.184:8080/futures/get-quote/ES,ZN,GE,BTC,CL,NG')
+      .then(res => res.json()).then(data => {
+        setQuotes(data);
+      })
     },[]);
 
     var qKeys = Object.keys(Quotes)

@@ -13,7 +13,7 @@ import './../../assets/css/Meta/Bootstrap.css'
 function Home() {
   return (
     <div className="container">
-      
+
       <div id="navbar">
         {NavBar()}
       </div>

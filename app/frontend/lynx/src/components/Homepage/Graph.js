@@ -6,15 +6,11 @@ import './../../assets/css/Homepage/Homepage.css'
 
 const Graph = () => {
     const [Hist, setHist] = useState('not working');
-    const payload = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: "ES"
-      };
     useEffect(() => {
-      fetch('http://127.0.0.1:5000/Hist', payload).then(res => res.json()).then(data => {
-        setHist(data);
-      });
+      fetch('http://18.119.100.184:8080/futures/get-hist/ES')
+        .then(res => res.json()).then(data => {
+          setHist(data);
+        });
     }, []);
 
     const key = Object.keys(Hist)

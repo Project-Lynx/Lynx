@@ -12,15 +12,11 @@ TODO:
 
 const Graph = () => {
     const [Data, setData] = useState('not working');
-    const payload = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: "UST,MOST_RECENT"
-      };
     useEffect(() => {
-      fetch('http://127.0.0.1:5000/get-curve', payload).then(res => res.json()).then(data => {
-        setData(data);
-      });
+      fetch('http://18.119.100.184:8080/yields/get-curve/UST/MOST_RECENT')
+        .then(res => res.json()).then(data => {
+          setData(data);
+        });
     }, []);
 
     const key = Object.keys(Data)
@@ -28,8 +24,8 @@ const Graph = () => {
 
     try {
       if (typeof _data != "undefined") {
-         const x_axis = Object.keys(_data)
-         const y_axis = Object.values(_data)
+         const x_axis = (Object.keys(_data)).slice(0, -1)
+         const y_axis = (Object.values(_data)).slice(0, -1)
 
          var chartData = [
                        {
@@ -51,18 +47,6 @@ const Graph = () => {
                    width: "100%", height: "100%"
          }
 
-         function AddDate(date) {
-           fetch(
-             'http://127.0.0.1:5000/get-curve',
-             {
-               method: 'POST',
-               headers: { 'Content-Type': 'application/json' },
-               body: "UST,1996-10-21"
-             }
-           ).then(res => res.json()).then(data => {
-             setData(data)
-           })
-         }
 
          return (
            <div className="graph-box">
@@ -77,12 +61,7 @@ const Graph = () => {
                       ev.preventDefault()
                       let value = `${document.getElementById("symbolInput").value}`
                       fetch(
-                        'http://127.0.0.1:5000/get-curve',
-                        {
-                          method: 'POST',
-                          headers: { 'Content-Type': 'application/json' },
-                          body: value + ",MOST_RECENT"
-                        }
+                        'http://18.119.100.184:8080/yields/get-curve/' + value + '/MOST_RECENT',
                       ).then(res => res.json()).then(data => {
                         setData(data)
                       })
@@ -99,16 +78,11 @@ const Graph = () => {
                  onKeyPress={(ev) => {
                    if (ev.key === 'Enter') {
                      ev.preventDefault()
-                     let value = `${document.getElementById("addDateInput").value}`
+                     let date = `${document.getElementById("addDateInput").value}`
                      let product = `${document.getElementById("symbolInput").value}`
                      if (product === "") {
                         fetch(
-                          'http://127.0.0.1:5000/get-curve',
-                          {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: "UST," + value
-                          }
+                          'http://18.119.100.184:8080/yields/get-curve/UST/' + date
                         ).then(res => res.json()).then(data => {
                             let key = Object.keys(data)
                             let _data = (data[key])
@@ -123,13 +97,32 @@ const Graph = () => {
                               marker: {color: 'rgba(210, 180, 229, 0.5)'},
                             })
                             console.log(chartData)
-                            var chart = document.getElementById("test123")
+                            var chart = document.getElementById("Plotly-Graph")
                             chart.setAttribute("data", chartData)
                         })
                      } else {
-                     }
+                        fetch(
+                          'http://18.119.100.184:8080/yields/get-curve/' + product + '/' + date
+                        ).then(res => res.json()).then(data => {
+                            let key = Object.keys(data)
+                            let _data = (data[key])
+                            let x_axis = Object.keys(_data)
+                            let y_axis = Object.values(_data)
+                            chartData.push({
+                              x: x_axis,
+                              y: y_axis,
+                              type: 'scatter',
+                              fill: 'tonexty',
+                              mode: 'lines+markers',
+                              marker: {color: 'rgba(210, 180, 229, 0.5)'},
+                            })
+                            console.log(chartData)
+                            var chart = document.getElementById("Plotly-Graph")
+                            chart.setAttribute("data", chartData)
+                     })
                    }
                  }}
+                }
                />
                <input
                  type="text"
@@ -139,28 +132,18 @@ const Graph = () => {
                  onKeyPress={(ev) => {
                    if (ev.key === 'Enter') {
                       ev.preventDefault()
-                      let value = `${document.getElementById("changeDateInput").value}`
+                      let date = `${document.getElementById("changeDateInput").value}`
                       let product = `${document.getElementById("symbolInput").value}`
                       if (product === "") {
                          fetch(
-                           'http://127.0.0.1:5000/get-curve',
-                           {
-                             method: 'POST',
-                             headers: { 'Content-Type': 'application/json' },
-                             body: "UST," + value
-                           }
+                            'http://18.119.100.184:8080/yields/get-curve/UST/' + date
                          ).then(res => res.json()).then(data => {
                            setData(data)
                          })
                       } else {
-                         console.log(product + value)
+                         console.log(product + date)
                          fetch(
-                           'http://127.0.0.1:5000/get-curve',
-                           {
-                             method: 'POST',
-                             headers: { 'Content-Type': 'application/json' },
-                             body: product + "," + value
-                           }
+                           'http://18.119.100.184:8080/yields/get-curve/' + product + '/' + date,
                          ).then(res => res.json()).then(data => {
                            setData(data)
                          })
@@ -171,9 +154,9 @@ const Graph = () => {
              </div>
              <div className="canvas">
                <Plot
-                 divId="test123"
+                 divId="Plotly-Graph"
                  data={chartData}
-                 layout={chartLayout}               
+                 layout={chartLayout}
                  style={chartStyle}
                />
              </div>
