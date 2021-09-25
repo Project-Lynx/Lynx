@@ -1,7 +1,7 @@
 #notes {
   grid-area: notes;
   padding-top: var(--main-padding);
-  width: 90%;
+  width: 91%;
 }
 .notes-header{
   display: flex;
@@ -45,6 +45,7 @@
   border: 1px solid #87B4E5;
   border-left-style: none;
   border-right-style: none;
+  color: #87B4E5;
 }
 .wrapper{
   width: 600px;
@@ -59,6 +60,7 @@
   -webkit-transition: all .1s;
   font-weight: bold;
   position: relative;
+  color: #87B4E5;
 }
 
 
@@ -66,9 +68,9 @@
 @media only screen
 and (min-width : 2000px) {
   .notes-header {
-    width: 103.5%;
+    width: 102.3%;
   }
   #workspace textarea{
-    width: 103.5%;
+    width: 102.3%;
   }
 }
