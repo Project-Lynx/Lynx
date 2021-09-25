@@ -8,13 +8,10 @@ blueprint = Blueprint("notes", __name__)
 @blueprint.route('/UpdateNotes', methods=['POST'])
 def UpdateNotes():
     data = (request.data).decode("utf-8")
-    notes_repo.update(data)
-
-    return "Success!"
+    notes_repo.handler(data)
+    return "Updated Saved Notes!", 200
 
 
 @blueprint.route('/ExportNotes')
 def ExportNotes():
-    data = notes_repo.export()
-
-    return data
+    return notes_repo.export(), 200
