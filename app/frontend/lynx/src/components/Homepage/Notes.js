@@ -19,9 +19,9 @@ const Notes = () => {
       var newTitle = document.createElement('input');
       newTitle.setAttribute("type", "text")
       newTitle.setAttribute("placeholder", name)
-      newTitle.setAttribute("class",name)
-      newTitle.setAttribute("id","note-item")
-      newTitle.setAttribute("name","title")
+      newTitle.setAttribute("class", name)
+      newTitle.setAttribute("id", "note-item")
+      newTitle.setAttribute("name", "title")
       titles.push(name)
       var workspace = document.getElementById('workspace');
       workspace.appendChild(newTitle);
@@ -30,9 +30,9 @@ const Notes = () => {
     function NewText() {
       var text = "Type your notes..."
       var newText =  document.createElement('textarea');
-      newText.setAttribute("placeholder",text)
-      newText.setAttribute("class","notes-textarea")
-      newText.setAttribute("id","note-item")
+      newText.setAttribute("placeholder", text)
+      newText.setAttribute("class", "notes-textarea")
+      newText.setAttribute("id", "note-item")
       texts.push(text)
       var workspace = document.getElementById('workspace');
       workspace.appendChild(newText);
@@ -76,16 +76,16 @@ const Notes = () => {
             var newTitle = document.createElement('input');
             newTitle.setAttribute("type", "text")
             newTitle.setAttribute("placeholder", Notes[key][i].Content)
-            newTitle.setAttribute("class",name)
-            newTitle.setAttribute("id","note-item")
-            newTitle.setAttribute("name","title")
+            newTitle.setAttribute("class", name)
+            newTitle.setAttribute("id", "note-item")
+            newTitle.setAttribute("name", "title")
             var workspace = document.getElementById('workspace');
             workspace.appendChild(newTitle);
           } else {
             var newText =  document.createElement('textarea');
             newText.setAttribute("placeholder", Notes[key][i].Content)
-            newText.setAttribute("class","notes-textarea")
-            newText.setAttribute("id","note-item")
+            newText.setAttribute("class", "notes-textarea")
+            newText.setAttribute("id", "note-item")
             var workspace = document.getElementById('workspace');
             workspace.appendChild(newText);
           }
