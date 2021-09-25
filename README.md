@@ -34,7 +34,7 @@ To install all of the required packages to this environment, simply run:
 pip3 install -r requirements.txt
 ```
 
-To start the api:
+To start the middleware:
 
 ```
 python3 application.py
