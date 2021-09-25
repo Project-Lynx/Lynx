@@ -606,3 +606,11 @@ button.bg-dark:hover {
 background-color: #1d2124!important
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
+
+#input[type="email"], #input[type="number"], #input[type="search"], #input[type="text"],
+#input[type="tel"], #input[type="url"], #input[type="password"], #textarea, #select {
+  border: 1px solid #87B4E5;
+  background-color:#242e3f;
+  border-radius: 5px;
+  color: #87B4E5;
+}

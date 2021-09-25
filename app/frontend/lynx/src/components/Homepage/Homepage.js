@@ -1,53 +1,47 @@
-import NavBar from './../NavBar.js'
-import NewsFeed from './NewsFeed.js'
-import QouteBoard from './QouteBoard.js'
+import NavBar from './../Meta/NavBar.js'
+import NewsFeed from './../Meta/NewsFeed.js'
+import QouteBoard from './../Meta/QouteBoard.js'
 import Notes from './Notes.js'
 import Events from './Events.js'
 import Graph from './Graph.js'
-import TwitterNews from './TwitterNews.js'
-import TwitterSocial from './TwitterSocial.js'
+import SessionMap from './SessionMap.js'
 
-import './../../assets/css/Homepage.css'
-import './../../assets/css/Bootstrap.css'
+import './../../assets/css/Homepage/Homepage.css'
+import './../../assets/css/Meta/Bootstrap.css'
 
 
 function Home() {
   return (
     <div className="container">
-      
-      {NavBar()}
+
+      <div id="navbar">
+        {NavBar()}
+      </div>
 
       <div id="newsfeed">
-        <div id="div-news">
-          <table className="table-news">
-            {NewsFeed()}
-          </table>
-        </div>
+          {NewsFeed()}
       </div>
 
       <div id="graph">
         {Graph()}
       </div>
-      
+
       <div id="notes">
         {Notes()}
       </div>
-      
+
       <div id="qoutes">
         {QouteBoard()}
       </div>
-      
+
       <div id="events">
         {Events()}
       </div>
-     
-      <div id="twitternews">
-        {TwitterNews()} 
+
+      <div id="yield-curve">
+        {SessionMap()}
       </div>
 
-      <div id="twittersocial">
-        {TwitterSocial()}
-      </div> 
     </div>
   )
 }

@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 import './../../assets/css/Homepage/Events.css'
+import './../../assets/css/Homepage/Homepage.css'
 
 const Events = () => {
     const [Events, setEvents] = useState('not working');
     useEffect(() => {
-      const payload = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: "US,"
-      };
-      fetch('http://127.0.0.1:5000/EconEvents', payload).then(res => res.json()).then(data => {
-        setEvents(data);
-      })
+      fetch('http://18.119.100.184:8080/events/get-econ-events/US')
+        .then(res => res.json()).then(data => {
+          setEvents(data);
+        })
     }, []);
 
     function eventsTable() {

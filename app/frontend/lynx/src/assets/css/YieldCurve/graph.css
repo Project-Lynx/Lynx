@@ -1,0 +1,45 @@
+#YC-graph {
+  grid-area: graph;
+  padding-top: var(--main-padding);
+  border: 1px solid #87B4E5;
+  border-top: none;
+}
+.canvas {
+  width: 100%;
+  height: 95%;
+}
+.graph-box{
+  width:100%;
+  height:100%;
+}
+.graph-options-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color:#1D262F;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #87B4E5;
+}
+#symbolInput{
+  border: 1px solid #87B4E5;
+  background-color: #242e3f;
+  color: #87B4E5;
+  margin: 15px;
+}
+#addDateInput{
+  border: 1px solid #87B4E5;
+  background-color: #242e3f;
+  color: #87B4E5;
+  margin: 15px;
+}
+#changeDateInput{
+  border: 1px solid #87B4E5;
+  background-color: #242e3f;
+  color: #87B4E5;
+  margin: 15px;
+}
+::placeholder {
+  color: #87B4E5;
+}
